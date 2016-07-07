@@ -13,4 +13,6 @@ elgg_register_event_handler('init', 'system', 'asset_library_init');
  */
 function asset_library_init() {
 	elgg_register_admin_menu_item('administer', 'assets', 'administer_utilities');
+	
+	elgg_register_action('asset_library/upload', __DIR__ . '/actions/upload.php', 'admin');
 }

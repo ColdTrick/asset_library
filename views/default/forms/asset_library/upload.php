@@ -2,5 +2,9 @@
 
 echo elgg_view_input('file', [
 	'name' => 'file',
-	'label' => elgg_echo('asset_library:forms:upload:file:label'),
+	'required' => true,
+]);
+
+echo elgg_view('input/submit', [
+	'value' => elgg_echo('upload'),
 ]);
