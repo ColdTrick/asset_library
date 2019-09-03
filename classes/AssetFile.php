@@ -17,7 +17,10 @@ class AssetFile extends \ElggFile {
 		$this->attributes['access_id'] = ACCESS_PUBLIC;
 	}
 	
-	public function getDownloadURL() {
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getDownloadURL($use_cookie = true, $expires = '+2 hours') {
 		$file_svc = new \Elgg\FileService\File();
 		$file_svc->setFile($this);
 		$file_svc->setDisposition('attachment');
@@ -25,7 +28,10 @@ class AssetFile extends \ElggFile {
 		return $file_svc->getURL();
 	}
 	
-	public function getInlineURL() {
-		return elgg_get_inline_url($this, false, false);
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getInlineURL($use_cookie = false, $expires = '') {
+		return parent::getInlineURL(false, '');
 	}
 }

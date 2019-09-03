@@ -19,7 +19,5 @@ echo elgg_view('output/url', [
 
 echo '<br />';
 
-echo 'Inline url: ' . $entity->getInlineURL() . '<br />';
-echo 'Download url: ' . $download_url;
-
-// clipboard.js https://clipboardjs.com/
+echo '<div class="elgg-subtext"><b>Inline url:</b> ' . $entity->getInlineURL() . '</div>';
+echo '<div class="elgg-subtext"><b>Download url:</b> ' . $download_url . '</div>';

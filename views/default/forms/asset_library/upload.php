@@ -1,10 +1,13 @@
 <?php
 
-echo elgg_view_input('file', [
+echo elgg_view_field([
+	'#type' => 'file',
 	'name' => 'file',
 	'required' => true,
 ]);
 
-echo elgg_view('input/submit', [
+$footer = elgg_view_field([
+	'#type' => 'submit',
 	'value' => elgg_echo('upload'),
 ]);
+elgg_set_form_footer($footer);
